@@ -2,26 +2,25 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./styles.css";
 
-const name = "Tushar Chaudhari";
-const year = new Date().getFullYear();
+const hour = new Date().getHours();
+console.log(hour);
+const day =
+  hour > 0 && hour < 12
+    ? "Morning"
+    : hour >= 12 && hour <= 18
+    ? "AfterNoon"
+    : "Evening";
+console.log(day);
+
+const customStyle = {
+  color: day === "Morning" ? "red" : day === "AfterNoon" ? "green" : "blue"
+};
+
 ReactDom.render(
   <div>
-    <h1 className="heading">{name}</h1>
-    <p>Copyright {year}</p>
-    <h2 style={{ color: "blue" }}>Indian Food</h2>
-    <img
-      src="https://image.shutterstock.com/image-photo/
-    indian-food-curry-butter-chicken-260nw-1304901667.jpg"
-      alt="indianfood"
-    />
-    {/* <div>
-      <br />
-    </div> */}
-    <img
-      src="https://encrypted-tbn0.gstatic.com/
-    images?q=tbn:ANd9GcR9BAolfVoRqgQwfILsrzJIUGQ4uPKrpcFVcg&usqp=CAU"
-      alt="food"
-    />
+    <h1 className="heading" style={customStyle}>
+      Good {day}
+    </h1>
   </div>,
   document.getElementById("root")
 );
