@@ -1,4 +1,10 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.heading {
+  color: red;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border: 2px solid;
+  margin: 10px 20px 30px 40px;
 }
